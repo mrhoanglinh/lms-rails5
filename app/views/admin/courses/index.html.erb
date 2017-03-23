@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<body>
+	<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%; overflow-y: scroll;">
+	  <h3 class="w3-bar-item">Admin Menu</h3>
+	  <a href="#" class="w3-bar-item w3-button">Account</a>
+	  <a href="#" class="w3-bar-item w3-button">Course</a>
+	  <a href="#" class="w3-bar-item w3-button">User</a>
+	</div>
+
+	<div style="margin-left:25%">
+
+	<div class="w3-container w3-teal">
+	  <h1>My Page</h1>
+	</div>
+	
+
+	<div class="w3-container">		
+
+
+
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+
+<table style:"width:100%" border = '1' id ="table_id">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Image</th>
+			<th>Status</th>
+			<th>Description</th>
+			<th>Start Date</th>
+			<th>End Date</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @courses.each do |c| %>
+			<tr>			
+				<td><%= c.name %></td>
+				<td><%= c.image %></td>
+				<td><%= c.status %></td>
+				<td><%= c.description %></td>
+				<td><%= c.start_date %></td>
+				<td><%= c.end_date %></td>	
+				<td>
+					<%= link_to "Edit"%> |			
+					<%= link_to "Delete" %>					
+				</td>			
+			</tr>
+		<% end %>	
+	</tbody>
+</table>
+
+<script>
+$(document).ready(function(){
+    $('#table_id').DataTable();
+});
+</script>
+
+
+
+
+	</div>
+
+	</div>
+      
+</body>

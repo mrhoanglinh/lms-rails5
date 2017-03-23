@@ -1,0 +1,22 @@
+<nav class="navbar navbar-default">
+  	<div class="container-fluid">
+    <div class="navbar-header">
+     <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="active">
+        <%= link_to "Home", root_path %>          
+      </li>
+
+      <li>
+        <% if session[:current_account_id] %>
+          <%= link_to accounts_logout_path, method: :delete do %>Logout<% end %>
+        <% else %>
+          <%= link_to "Login", accounts_login_path %>    
+        <% end %>
+      </li> 
+      
+      
+    </ul>
+  	</div>
+	</nav>
